@@ -1,0 +1,23 @@
+server:
+  port: 8090
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+security:
+  oauth2:
+    jwtSigningKey: admin
+    permitUrl: /oauth/**
+    clients[0]:
+      clientId: client
+      clientSecret: client
+      scopes: all
+      accessTokenValiditySeconds: 864000
+      refreshTokenValiditySeconds: 864000
+logging:
+  level:
+    root: WARN
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
